@@ -1,0 +1,35 @@
+{
+  "parent": "skycreate:welcome",
+  "display": {
+    "icon": {
+      "item": "minecraft:apple"
+    },
+    "title": {
+      "translate": "advancement.skycreate.hunger"
+    },
+    "description": {
+      "color": "#DBA213",
+      "translate": "advancement.skycreate.hunger.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "rewards": {
+    "loot": [
+      "skycreate:advancement_reward/hunger"
+    ]
+  },
+  "criteria": {
+    "0": {
+      "trigger": "skycreate:hunger_builtin",
+      "conditions": {}
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ]
+}

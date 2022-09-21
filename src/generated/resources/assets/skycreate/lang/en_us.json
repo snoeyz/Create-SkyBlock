@@ -1,0 +1,30 @@
+{
+
+	"_": "->------------------------]  Game Elements  [------------------------<-",
+
+	"block.skycreate.pulverizer": "Pulverizer",
+
+
+	"_": "->------------------------]  Advancements  [------------------------<-",
+
+	"advancement.skycreate.root": "Welcome to SkyBlock Create",
+	"advancement.skycreate.root.desc": "Here Be SkyBlock Contraptions!",
+	"advancement.skycreate.welcome": "Getting Started",
+	"advancement.skycreate.welcome.desc": "Let's Get Pulverizing!",
+	"advancement.skycreate.hunger": "Feeling a Bit Peckish?",
+	"advancement.skycreate.hunger.desc": "Try not to work yourself to death...",
+	"advancement.skycreate.milling": "Time to Grind",
+	"advancement.skycreate.milling.desc": "You're going to need some gravel to chop down those trees...",
+	"advancement.skycreate.farming": "Let's Get Farming!",
+	"advancement.skycreate.farming.desc": "Farming is a great way to get food!",
+
+
+	"_": "->------------------------]  UI & Messages  [------------------------<-",
+
+	"generator.skycreate.skycreate": "SkyblockCreate",
+
+	"itemGroup.skycreate:main": "SkyCreate",
+
+	"_": "Thank you for translating Create!"
+
+}

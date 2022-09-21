@@ -1,0 +1,12 @@
+{
+  "required": false,
+  "priority": 2000,
+  "package": "com.snoeyz.skycreate.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "skycreate.refmap.json",
+  "mixins": [
+  ],
+  "client": [
+  ],
+  "minVersion": "0.8"
+}

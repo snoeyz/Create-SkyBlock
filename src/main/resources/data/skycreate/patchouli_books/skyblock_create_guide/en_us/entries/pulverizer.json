@@ -1,0 +1,12 @@
+{
+    "name": "Pulverizer",
+    "category": "skycreate:contraptions",
+    "icon": "skycreate:pulverizer",
+    "pages": [
+        {
+            "type": "patchouli:spotlight",
+            "item": "skycreate:pulverizer",
+            "text": "This pulverizer is a custom contraption that can be used on the following blocks:$(br)$(li)$(item)Cobblestone$() --> [1-3] $(item)Loose Stone Rock$()$(li)$(item)Ice$() --> $(item)Water$() source block$(li)Any Log Block --> [1-4]$(item)Stick$()"
+        }
+    ]
+}

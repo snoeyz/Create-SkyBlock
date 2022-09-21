@@ -1,0 +1,30 @@
+{
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:clay_ball",
+            "conditions": [
+              {
+                "condition": "minecraft:random_chance",
+                "chance": 0.2
+              }
+            ]
+          },
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:flint",
+            "conditions": [
+              {
+                "condition": "minecraft:random_chance",
+                "chance": 0.4
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  

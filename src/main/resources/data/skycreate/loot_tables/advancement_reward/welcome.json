@@ -1,0 +1,32 @@
+{
+    "type": "minecraft:advancement_reward",
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "skycreate:pulverizer"
+                }
+            ]
+        },
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "create:hand_crank"
+                }
+            ]
+        },
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "create:wrench"
+                }
+            ]
+        }
+    ]
+}

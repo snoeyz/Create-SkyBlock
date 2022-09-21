@@ -1,0 +1,19 @@
+{
+    "name": "Introduction",
+    "category": "skycreate:getting_started",
+    "icon": "skycreate:pulverizer",
+    "sortnum": 0,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "title": "Introduction",
+            "text": "Welcome to SkyBlock Create!$(br)A mod created by Snoeyz$(br2)The following pages will outline your journey through this modpack and help you understand how to achieve the ultimate automated skyblock island!"
+        },
+        {
+            "type": "patchouli:quest",
+            "trigger": "skycreate:welcome",
+            "title": "Wasn't That Easy?",
+            "text": "Congratulations! Simply by opening up this book, you're already well on your way to becoming a SkyBlock Create master!$(br)By earning this achevement, you should find in your inventory a $(item)pulverizer$(), a $(item)hand crank$(), and a $(item)wrench$()!$(br2)The $(item)pulverizer$() can be used to do various tasks, like break cobblestone, gravel, logs, and ice down!$(br)The $(item)wrench$() can be used to rotate various contraptions, and by shift-clicking a contraption with the wrench, you can even pick contraptions up easily!$(br)While, eventually, you'll be able to fully automate many tasks, for now, you'll have to use the $(item)hand crank$() to power many of the contraptions in the early stages."
+        }
+    ]
+}

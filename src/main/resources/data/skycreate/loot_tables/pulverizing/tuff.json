@@ -1,0 +1,46 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:flint"
+                }
+            ],
+            "conditions": [
+                {
+                    "condition": "minecraft:random_chance",
+                    "chance": 0.25
+                }
+            ]
+        },
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "create:zinc_nugget"
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "create:copper_nugget"
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:iron_nugget"
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:gold_nugget"
+                }
+            ],
+            "conditions": [
+                {
+                    "condition": "minecraft:random_chance",
+                    "chance": 0.1
+                }
+            ]
+        }
+    ]
+}

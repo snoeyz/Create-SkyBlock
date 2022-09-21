@@ -1,0 +1,14 @@
+{
+    "name": "Acquiring Flint",
+    "category": "skycreate:getting_started",
+    "icon": "minecraft:flint",
+    "sortnum": 1,
+    "pages": [
+        {
+            "type": "patchouli:quest",
+            "trigger": "skycreate:milling",
+            "title": "Time to Grind",
+            "text": "In order to get $(item)flint$(), which you will need for all your starter tools, you first need to grind down $(item)cobblestone$() into $(item)gravel$(), which you can then use in the $(item)millstone$(), $(item)pulverizer$(), or break by hand to get flint!"
+        }
+    ]
+}

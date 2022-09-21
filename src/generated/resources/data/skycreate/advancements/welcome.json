@@ -1,0 +1,44 @@
+{
+  "parent": "skycreate:root",
+  "display": {
+    "icon": {
+      "item": "skycreate:pulverizer"
+    },
+    "title": {
+      "translate": "advancement.skycreate.welcome"
+    },
+    "description": {
+      "color": "#DBA213",
+      "translate": "advancement.skycreate.welcome.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "rewards": {
+    "loot": [
+      "skycreate:advancement_reward/welcome"
+    ]
+  },
+  "criteria": {
+    "0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "patchouli:guide_book"
+            ],
+            "nbt": "{\"patchouli:book\":\"skycreate:skyblock_create_guide\"}"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:grass_block"
+    },
+    "title": {
+      "translate": "advancement.skycreate.root"
+    },
+    "description": {
+      "color": "#DBA213",
+      "translate": "advancement.skycreate.root.desc"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false,
+    "background": "skycreate:textures/gui/advancements.png"
+  },
+  "rewards": {
+    "loot": [
+      "skycreate:advancement_reward/grant_book_on_first_join"
+    ]
+  },
+  "criteria": {
+    "0": {
+      "trigger": "minecraft:tick",
+      "conditions": {}
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ]
+}

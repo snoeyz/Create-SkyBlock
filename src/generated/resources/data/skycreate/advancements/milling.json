@@ -1,0 +1,43 @@
+{
+  "parent": "skycreate:welcome",
+  "display": {
+    "icon": {
+      "item": "minecraft:cobblestone"
+    },
+    "title": {
+      "translate": "advancement.skycreate.milling"
+    },
+    "description": {
+      "color": "#DBA213",
+      "translate": "advancement.skycreate.milling.desc"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "rewards": {
+    "loot": [
+      "skycreate:advancement_reward/milling"
+    ]
+  },
+  "criteria": {
+    "0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:cobblestone"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "0"
+    ]
+  ]
+}

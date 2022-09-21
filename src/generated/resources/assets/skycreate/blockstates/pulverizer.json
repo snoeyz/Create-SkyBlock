@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "axis_along_first=false,facing=down": {
+      "model": "skycreate:block/pulverizer/horizontal",
+      "x": 270,
+      "y": 90
+    },
+    "axis_along_first=true,facing=down": {
+      "model": "skycreate:block/pulverizer/horizontal",
+      "x": 270
+    },
+    "axis_along_first=false,facing=up": {
+      "model": "skycreate:block/pulverizer/horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis_along_first=true,facing=up": {
+      "model": "skycreate:block/pulverizer/horizontal",
+      "x": 90
+    },
+    "axis_along_first=false,facing=north": {
+      "model": "skycreate:block/pulverizer/vertical",
+      "y": 180
+    },
+    "axis_along_first=true,facing=north": {
+      "model": "skycreate:block/pulverizer/horizontal",
+      "y": 180
+    },
+    "axis_along_first=false,facing=south": {
+      "model": "skycreate:block/pulverizer/vertical"
+    },
+    "axis_along_first=true,facing=south": {
+      "model": "skycreate:block/pulverizer/horizontal"
+    },
+    "axis_along_first=false,facing=west": {
+      "model": "skycreate:block/pulverizer/horizontal",
+      "y": 90
+    },
+    "axis_along_first=true,facing=west": {
+      "model": "skycreate:block/pulverizer/vertical",
+      "y": 90
+    },
+    "axis_along_first=false,facing=east": {
+      "model": "skycreate:block/pulverizer/horizontal",
+      "y": 270
+    },
+    "axis_along_first=true,facing=east": {
+      "model": "skycreate:block/pulverizer/vertical",
+      "y": 270
+    }
+  }
+}

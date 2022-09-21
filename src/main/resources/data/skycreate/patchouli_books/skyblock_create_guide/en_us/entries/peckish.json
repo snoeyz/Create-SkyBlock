@@ -1,0 +1,16 @@
+{
+    "name": "Peckish",
+    "category": "skycreate:getting_started",
+    "icon": "minecraft:apple",
+    "sortnum": 3,
+    "secret": true,
+    "advancement": "skycreate:hunger",
+    "pages": [
+        {
+            "type": "patchouli:quest",
+            "trigger": "skycreate:hunger",
+            "title": "Feeling a Bit Peckish?",
+            "text": ""
+        }
+    ]
+}

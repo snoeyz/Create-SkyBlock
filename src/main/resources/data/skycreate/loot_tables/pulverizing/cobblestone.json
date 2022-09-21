@@ -1,0 +1,41 @@
+{
+  "pools": [
+    {
+      "rolls": {
+        "min": 2,
+        "max": 4
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "notreepunching:andesite_loose_rock"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "notreepunching:diorite_loose_rock"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "notreepunching:granite_loose_rock"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 7,
+          "name": "notreepunching:stone_loose_rock",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
