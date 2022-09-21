@@ -33,7 +33,7 @@ public class PulverizerTileEntity extends KineticTileEntity {
     private LerpedFloat animatedOffset;
 
     enum State {
-        WAITING, EXPANDING, RETRACTING, DUMPING;
+        WAITING, EXPANDING, RETRACTING;
     }
     
     public PulverizerTileEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
@@ -43,7 +43,7 @@ public class PulverizerTileEntity extends KineticTileEntity {
     }
 
     protected int getTimerSpeed() {
-        return (int) (getSpeed() == 0 ? 0 : Mth.clamp(Math.abs(getSpeed() * 2), 8, 512));
+        return (int) (getSpeed() == 0 ? 0 : Mth.clamp(Math.abs(getSpeed() * 8), 8, 512));
     }
 
     @Override
@@ -68,14 +68,14 @@ public class PulverizerTileEntity extends KineticTileEntity {
             activate();
 
             state = State.RETRACTING;
-            timer = 250;
+            timer = 1000;
             sendData();
             return;
         }
 
         if (state == State.RETRACTING) {
             state = State.WAITING;
-            timer = 125;
+            timer = 500;
             sendData();
             return;
         }
@@ -89,7 +89,7 @@ public class PulverizerTileEntity extends KineticTileEntity {
         ClipContext rayTraceContext = new ClipContext(rayOrigin, rayTarget, Block.OUTLINE, Fluid.NONE, null);
         BlockHitResult result = level.clip(rayTraceContext);
         reach = (float) (.5f + Math.min(result.getLocation().subtract(rayOrigin).length(), .75f));
-        timer = 250;
+        timer = 1000;
         if (loopCount == 0) loopCount = 5;
         sendData();
     }
@@ -123,6 +123,7 @@ public class PulverizerTileEntity extends KineticTileEntity {
     protected void read(CompoundTag compound, boolean clientPacket) {
         state = NBTHelper.readEnum(compound, "State", State.class);
         timer = compound.getInt("Timer");
+        loopCount = compound.getInt("LoopCount");
         super.read(compound, clientPacket);
 
         if (!clientPacket)
@@ -138,6 +139,7 @@ public class PulverizerTileEntity extends KineticTileEntity {
     public void write(CompoundTag compound, boolean clientPacket) {
         NBTHelper.writeEnum(compound, "State", state);
         compound.putInt("Timer", timer);
+        compound.putInt("LoopCount", loopCount);
 
         super.write(compound, clientPacket);
 
