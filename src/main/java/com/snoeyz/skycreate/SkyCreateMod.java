@@ -5,10 +5,8 @@ import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.snoeyz.skycreate.advancement.SCAdvancements;
 import com.snoeyz.skycreate.advancement.SCTriggers;
 import com.snoeyz.skycreate.datagen.LangMerger;
-import com.snoeyz.skycreate.registry.CreativeModGroup;
-import com.snoeyz.skycreate.registry.SCBlockPartials;
-import com.snoeyz.skycreate.registry.SCBlocks;
-import com.snoeyz.skycreate.registry.SCTileEntities;
+import com.snoeyz.skycreate.datagen.recipe.PulverizingRecipeGen;
+import com.snoeyz.skycreate.registry.*;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;
 
 import net.minecraft.data.DataGenerator;
@@ -51,6 +49,7 @@ public class SkyCreateMod
 
         SCBlocks.register();
         SCTileEntities.register();
+        SCRecipeTypes.register(modbus);
         
 		DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
             SCBlockPartials.init();
@@ -80,6 +79,7 @@ public class SkyCreateMod
         }
         if (event.includeServer()) {
             gen.addProvider(new SCAdvancements(gen));
+            gen.addProvider(new PulverizingRecipeGen(gen));
             // gen.addProvider(new SCCraftingRecipes(gen));
             // gen.addProvider(new SCLootTables(gen));
             // gen.addProvidernew StandardRecipeGen(gen));

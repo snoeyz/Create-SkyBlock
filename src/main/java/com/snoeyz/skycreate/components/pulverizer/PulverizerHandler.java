@@ -1,4 +1,4 @@
-package com.snoeyz.skycreate.blocks.pulverizer;
+package com.snoeyz.skycreate.components.pulverizer;
 
 import java.util.List;
 

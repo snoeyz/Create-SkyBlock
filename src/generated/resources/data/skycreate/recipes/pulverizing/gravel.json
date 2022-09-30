@@ -1,0 +1,19 @@
+{
+  "type": "skycreate:pulverizing",
+  "ingredients": [
+    {
+      "item": "minecraft:gravel"
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:clay_ball",
+      "chance": 0.1
+    },
+    {
+      "item": "minecraft:flint",
+      "chance": 0.2
+    }
+  ],
+  "processingTime": 200
+}

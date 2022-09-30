@@ -1,0 +1,29 @@
+{
+  "type": "skycreate:pulverizing",
+  "ingredients": [
+    {
+      "item": "minecraft:stone"
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:cobblestone",
+      "chance": 0.5
+    },
+    {
+      "item": "minecraft:tuff",
+      "chance": 0.5
+    },
+    {
+      "item": "minecraft:iron_nugget",
+      "count": 2,
+      "chance": 0.05
+    },
+    {
+      "item": "create:copper_nugget",
+      "count": 2,
+      "chance": 0.05
+    }
+  ],
+  "processingTime": 200
+}

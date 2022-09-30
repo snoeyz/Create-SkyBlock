@@ -1,4 +1,4 @@
-package com.snoeyz.skycreate.blocks.pulverizer;
+package com.snoeyz.skycreate.components.pulverizer;
 
 import static com.simibubi.create.content.contraptions.base.DirectionalKineticBlock.FACING;
 

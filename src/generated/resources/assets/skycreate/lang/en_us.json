@@ -25,6 +25,9 @@
 
 	"itemGroup.skycreate:main": "SkyCreate",
 
+	"skycreate.recipe.pulverizing": "Pulverizing",
+	"skycreate.recipe.processing.chance": "%1$s%% Chance",
+
 	"_": "Thank you for translating Create!"
 
 }

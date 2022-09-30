@@ -9,7 +9,7 @@ import com.simibubi.create.foundation.data.BlockStateGen;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.data.SharedProperties;
 import com.snoeyz.skycreate.SkyCreateMod;
-import com.snoeyz.skycreate.blocks.pulverizer.PulverizerBlock;
+import com.snoeyz.skycreate.components.pulverizer.PulverizerBlock;
 import com.tterrag.registrate.util.entry.BlockEntry;
 
 public class SCBlocks {

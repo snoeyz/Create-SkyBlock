@@ -1,4 +1,6 @@
 {
     "generator.skycreate.skycreate": "SkyblockCreate",
-    "itemGroup.skycreate:main": "SkyCreate"
+    "itemGroup.skycreate:main": "SkyCreate",
+    "skycreate.recipe.pulverizing": "Pulverizing",
+    "skycreate.recipe.processing.chance": "%1$s%% Chance"
 }
