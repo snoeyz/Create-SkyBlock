@@ -40,7 +40,7 @@ public class SCAdvancements implements DataProvider {
     public static final SkyCreateAdvancement START = null,
 
     ROOT = skyCreate("root", b -> b.icon(Blocks.GRASS_BLOCK)
-        .title("Welcome to SkyBlock Create")
+        .title("SkyBlock Create")
         .description("Here Be SkyBlock Contraptions!")
         .awardedForFree()
         .lootOnlyRewards(new ResourceLocation(SkyCreateMod.MOD_ID, "advancement_reward/grant_book_on_first_join"))
