@@ -46,3 +46,6 @@ local.properties
 .buildpath
 
 .DS_Store
+
+
+src/generated/**/.cache
