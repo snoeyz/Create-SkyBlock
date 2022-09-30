@@ -7,7 +7,7 @@
 
 	"_": "->------------------------]  Advancements  [------------------------<-",
 
-	"advancement.skycreate.root": "Welcome to SkyBlock Create",
+	"advancement.skycreate.root": "SkyBlock Create",
 	"advancement.skycreate.root.desc": "Here Be SkyBlock Contraptions!",
 	"advancement.skycreate.welcome": "Getting Started",
 	"advancement.skycreate.welcome.desc": "Let's Get Pulverizing!",
@@ -27,6 +27,8 @@
 
 	"skycreate.recipe.pulverizing": "Pulverizing",
 	"skycreate.recipe.processing.chance": "%1$s%% Chance",
+	"skycreate.recipe.pulverizing.drop": "Item Drop",
+	"skycreate.recipe.pulverizing.output": "Pulverization Result",
 
 	"_": "Thank you for translating Create!"
 

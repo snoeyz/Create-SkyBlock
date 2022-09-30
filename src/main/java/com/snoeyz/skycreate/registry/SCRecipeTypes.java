@@ -6,8 +6,9 @@ import com.simibubi.create.content.contraptions.processing.ProcessingRecipeSeria
 import com.simibubi.create.foundation.utility.RegisteredObjects;
 import com.simibubi.create.foundation.utility.recipe.IRecipeTypeInfo;
 import com.snoeyz.skycreate.SkyCreateMod;
-import com.snoeyz.skycreate.recipe.PulverizingRecipe;
 import com.snoeyz.skycreate.datagen.Lang;
+import com.snoeyz.skycreate.datagen.recipe.PulverizingRecipeSerializer;
+
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.Container;
@@ -28,7 +29,7 @@ import java.util.function.Supplier;
 
 public enum SCRecipeTypes implements IRecipeTypeInfo {
 
-    PULVERIZING(PulverizingRecipe::new);
+    PULVERIZING(PulverizingRecipeSerializer::new);
 
     private final ResourceLocation id;
     private final RegistryObject<RecipeSerializer<?>> serializerObject;

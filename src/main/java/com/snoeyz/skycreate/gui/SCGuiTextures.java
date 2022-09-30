@@ -19,6 +19,7 @@ public enum SCGuiTextures implements ScreenElement {
     JEI_ARROW("jei/widgets", 19, 10, 42, 10),
     JEI_LONG_ARROW("jei/widgets", 19, 0, 71, 10),
     JEI_DOWN_ARROW("jei/widgets", 0, 21, 18, 14),
+    JEI_UP_ARROW("jei/widgets", 18, 21, 18, 14),
     JEI_LIGHT("jei/widgets", 0, 42, 52, 11),
     JEI_QUESTION_MARK("jei/widgets", 0, 178, 12, 16),
     JEI_SHADOW("jei/widgets", 0, 56, 52, 11),

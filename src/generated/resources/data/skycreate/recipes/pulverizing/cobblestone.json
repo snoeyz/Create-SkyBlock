@@ -5,7 +5,8 @@
       "item": "minecraft:cobblestone"
     }
   ],
-  "results": [
+  "blockResults": [],
+  "itemResults": [
     {
       "item": "notreepunching:andesite_loose_rock",
       "chance": 0.1

@@ -5,7 +5,8 @@
       "item": "minecraft:tuff"
     }
   ],
-  "results": [
+  "blockResults": [],
+  "itemResults": [
     {
       "item": "minecraft:flint",
       "chance": 0.25

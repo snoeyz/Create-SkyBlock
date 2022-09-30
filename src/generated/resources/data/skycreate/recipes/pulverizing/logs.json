@@ -5,7 +5,8 @@
       "tag": "minecraft:logs"
     }
   ],
-  "results": [
+  "blockResults": [],
+  "itemResults": [
     {
       "item": "minecraft:stick",
       "count": 4

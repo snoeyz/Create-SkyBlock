@@ -5,7 +5,12 @@
       "item": "minecraft:gravel"
     }
   ],
-  "results": [
+  "blockResults": [
+    {
+      "item": "minecraft:sand"
+    }
+  ],
+  "itemResults": [
     {
       "item": "minecraft:clay_ball",
       "chance": 0.1
