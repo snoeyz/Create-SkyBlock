@@ -53,8 +53,8 @@ public class PulverizingCategory extends SkyCreateRecipeCategory<PulverizingReci
 
         int i = 0;
         for (FluidStack fluidResult : recipe.getOutputFluids()) {
-            int xOffset = (i % 3) * 19;
-            int yOffset = (i / 3) * -19;
+            int xOffset = (i % 4) * 19;
+            int yOffset = (i / 4) * -19;
             builder
                     .addSlot(RecipeIngredientRole.OUTPUT, 99 + xOffset, 48 + yOffset)
                     .setBackground(getRenderedSlot(), -1, -1)
@@ -63,8 +63,8 @@ public class PulverizingCategory extends SkyCreateRecipeCategory<PulverizingReci
             i++;
         }
         for (ProcessingOutput output : recipe.getOutputBlocks()) {
-            int xOffset = (i % 3) * 19;
-            int yOffset = (i / 3) * -19;
+            int xOffset = (i % 4) * 19;
+            int yOffset = (i / 4) * -19;
             builder
                     .addSlot(RecipeIngredientRole.OUTPUT, 99 + xOffset, 48 + yOffset)
                     .setBackground(getRenderedSlot(output), -1, -1)
@@ -73,12 +73,12 @@ public class PulverizingCategory extends SkyCreateRecipeCategory<PulverizingReci
             i++;
         }
         if (i > 0) {
-            i += 5;
-            i = i - (i % 3);
+            i += 7;
+            i = i - (i % 4);
         }
         for (ProcessingOutput output : recipe.getOutputItems()) {
-            int xOffset = (i % 3) * 19;
-            int yOffset = (i / 3) * -19;
+            int xOffset = (i % 4) * 19;
+            int yOffset = (i / 4) * -19;
             builder
                     .addSlot(RecipeIngredientRole.OUTPUT, 99 + xOffset, 48 + yOffset)
                     .setBackground(getRenderedSlot(output), -1, -1)
@@ -91,10 +91,10 @@ public class PulverizingCategory extends SkyCreateRecipeCategory<PulverizingReci
     @Override
     public void draw(PulverizingRecipe recipe, IRecipeSlotsView iRecipeSlotsView, PoseStack matrixStack, double mouseX, double mouseY) {
         //SCGuiTextures.JEI_SHADOW.render(matrixStack, 72 - 17, 42 + 13);
-        SCGuiTextures.JEI_ARROW.render(matrixStack, 45, 52);
+        SCGuiTextures.JEI_ARROW.render(matrixStack, 55, 52);
         // SCGuiTextures.JEI_UP_ARROW.render(matrixStack, 50, 45);
 
-        pulverizer.draw(matrixStack, 27, 27);
+        pulverizer.draw(matrixStack, 25, 27);
     }
 
     public static FluidStack withImprovedVisibility(FluidStack stack) {
