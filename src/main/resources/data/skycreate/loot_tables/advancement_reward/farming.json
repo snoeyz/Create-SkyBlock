@@ -1,0 +1,14 @@
+{
+    "pools": [
+      {
+        "rolls": 3,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:wheat_seeds"
+          }
+        ]
+      }
+    ]
+  }
+  

@@ -78,6 +78,7 @@ public class SCAdvancements implements DataProvider {
         .description("Farming is a great way to get food!")
         .whenIconCollected()
         .after(HUNGER)
+        .lootOnlyRewards(new ResourceLocation(SkyCreateMod.MOD_ID, "advancement_reward/farming"))
         .special(NOISY)),
 
     //

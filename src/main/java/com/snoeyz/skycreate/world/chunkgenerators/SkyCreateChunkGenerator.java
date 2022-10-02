@@ -47,7 +47,7 @@ public class SkyCreateChunkGenerator {
         }
         if (template != null) {
             StructurePlaceSettings settings = new StructurePlaceSettings().setKnownShape(true);
-            template.placeInWorld(level, new BlockPos(0, 64, 0), new BlockPos(0, 64, 0), settings, new Random(), Block.UPDATE_CLIENTS);
+            template.placeInWorld(level, new BlockPos(0, 60, 0), new BlockPos(0, 60, 0), settings, new Random(), Block.UPDATE_CLIENTS);
         }
     }
 }
