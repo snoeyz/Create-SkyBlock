@@ -63,7 +63,7 @@ public class SCAdvancements implements DataProvider {
         .description("Try not to work yourself to death...")
         .after(WELCOME)
         .lootOnlyRewards(new ResourceLocation(SkyCreateMod.MOD_ID, "advancement_reward/hunger"))
-        .special(NOISY)),
+        .special(SILENT)),
 
     MILLING = skyCreate("milling", b -> b.icon(Blocks.COBBLESTONE)
         .title("Time to Grind")
