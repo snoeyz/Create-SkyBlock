@@ -208,7 +208,6 @@ public class PulverizingRecipeBuilder {
         private ResourceLocation id;
         private PulverizingRecipe recipe;
 
-        @SuppressWarnings("unchecked")
         public DataGenResult(PulverizingRecipe recipe, List<ICondition> recipeConditions) {
             this.recipe = recipe;
             this.recipeConditions = recipeConditions;

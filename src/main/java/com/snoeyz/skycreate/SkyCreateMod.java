@@ -6,6 +6,7 @@ import com.snoeyz.skycreate.advancement.SCAdvancements;
 import com.snoeyz.skycreate.advancement.SCTriggers;
 import com.snoeyz.skycreate.datagen.LangMerger;
 import com.snoeyz.skycreate.datagen.recipe.PulverizingRecipeGen;
+import com.snoeyz.skycreate.datagen.recipe.StandardRecipeGen;
 import com.snoeyz.skycreate.registry.*;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;
 
@@ -75,17 +76,11 @@ public class SkyCreateMod
         DataGenerator gen = event.getGenerator();
         if (event.includeClient()) {
             gen.addProvider(new LangMerger(gen));
-            // gen.addProvider(AllSoundEvents.provider(gen));
         }
         if (event.includeServer()) {
             gen.addProvider(new SCAdvancements(gen));
             gen.addProvider(new PulverizingRecipeGen(gen));
-            // gen.addProvider(new SCCraftingRecipes(gen));
-            // gen.addProvider(new SCLootTables(gen));
-            // gen.addProvidernew StandardRecipeGen(gen));
-            // gen.addProvidernew MechanicalCraftingRecipeGen(gen));
-            // gen.addProvidernew SequencedAssemblyRecipeGen(gen));
-            // ProcessingRecipeGen.registerAll(gen);
+            gen.addProvider(new StandardRecipeGen(gen));
         }
     }
     
