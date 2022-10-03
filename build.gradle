@@ -86,7 +86,7 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-    maven {
+    maven { // Create, Registrate, Flywheel
         name = 'tterrag maven'
         url = 'https://maven.tterrag.com/'
     }
@@ -112,7 +112,9 @@ repositories {
         }
     }
 
-    maven { url 'https://maven.blamejared.com' }
+    maven { // Patchouli
+        url 'https://maven.blamejared.com' 
+    }
 
     maven {
         url "https://www.cursemaven.com"
