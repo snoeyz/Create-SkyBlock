@@ -69,9 +69,3 @@ A SkyBlock mod that centers around the Create mod
     versionRange="[5.0.3,)"
     ordering="AFTER"
     side="BOTH"
-[[dependencies.skycreate]]
-    modId="patchouli"
-    mandatory=true
-    versionRange="[71.1,)"
-    ordering="AFTER"
-    side="BOTH"
