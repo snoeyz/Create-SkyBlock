@@ -17,6 +17,11 @@
     "announce_to_chat": true,
     "hidden": false
   },
+  "rewards": {
+    "loot": [
+      "skycreate:advancement_reward/farming"
+    ]
+  },
   "criteria": {
     "0": {
       "trigger": "minecraft:inventory_changed",

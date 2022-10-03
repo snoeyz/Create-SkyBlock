@@ -13,19 +13,19 @@
     },
     {
       "item": "create:zinc_ingot",
-      "chance": 0.025
+      "chance": 0.3
     },
     {
       "item": "create:copper_nugget",
-      "chance": 0.025
+      "chance": 0.3
     },
     {
       "item": "minecraft:iron_nugget",
-      "chance": 0.025
+      "chance": 0.3
     },
     {
       "item": "minecraft:gold_nugget",
-      "chance": 0.025
+      "chance": 0.1
     }
   ],
   "processingTime": 200

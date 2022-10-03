@@ -41,16 +41,16 @@ public class PulverizingRecipeGen extends SkyCreateRecipeProvider {
             .output(Items.STICK, 4)),
 
     STONE = pulverize(I::stone, b -> b.duration(200)
-            .blockOutput(.5f, Items.COBBLESTONE)
-            .blockOutput(.5f, Items.TUFF)
-            .output(.05f, Items.IRON_NUGGET, 2)
-            .output(.05f, AllItems.COPPER_NUGGET.get(), 2)),
+            .blockOutput(Items.COBBLESTONE)
+            .output(.2f, Items.IRON_NUGGET)
+            .output(.2f, AllItems.ZINC_INGOT.get())
+            .output(.1f, AllItems.COPPER_NUGGET.get())),
 
     TUFF = pulverize(I::tuff, b -> b.duration(200)
             .output(.25f, Items.FLINT)
-            .output(.1f, AllItems.ZINC_INGOT.get())
-            .output(.1f, AllItems.COPPER_NUGGET.get())
-            .output(.1f, Items.IRON_NUGGET)
+            .output(.3f, AllItems.ZINC_INGOT.get())
+            .output(.3f, AllItems.COPPER_NUGGET.get())
+            .output(.3f, Items.IRON_NUGGET)
             .output(.1f, Items.GOLD_NUGGET));
 
     public PulverizingRecipeGen(DataGenerator gen) {

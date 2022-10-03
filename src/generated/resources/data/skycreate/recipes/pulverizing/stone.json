@@ -7,24 +7,21 @@
   ],
   "blockResults": [
     {
-      "item": "minecraft:cobblestone",
-      "chance": 0.5
-    },
-    {
-      "item": "minecraft:tuff",
-      "chance": 0.5
+      "item": "minecraft:cobblestone"
     }
   ],
   "itemResults": [
     {
       "item": "minecraft:iron_nugget",
-      "count": 2,
-      "chance": 0.05
+      "chance": 0.2
+    },
+    {
+      "item": "create:zinc_ingot",
+      "chance": 0.2
     },
     {
       "item": "create:copper_nugget",
-      "count": 2,
-      "chance": 0.05
+      "chance": 0.1
     }
   ],
   "processingTime": 200

@@ -1,0 +1,37 @@
+[02Oct2022 20:15:33.971] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeserveruserdev, --gameDir, ., --fml.forgeVersion, 40.1.60, --fml.mcVersion, 1.18.2, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20220404.173914, --debug, --stacktrace, --scan, -mixin.config=skycreate.mixins.json]
+[02Oct2022 20:15:33.979] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 9.1.3+9.1.3+main.9b69c82a starting: java version 17.0.3 by Microsoft
+[02Oct2022 20:15:34.198] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/snoey/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%2323!/ Service=ModLauncher Env=SERVER
+[02Oct2022 20:15:34.928] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\snoey\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.18.2-40.1.60\2727b7dfa614a56b9209c35af610be27a9c1199f\javafmllanguage-1.18.2-40.1.60.jar is missing mods.toml file
+[02Oct2022 20:15:34.933] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\snoey\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.18.2-40.1.60\5411826dd32b50c4b2f76cd676acdbd2fa81b6de\lowcodelanguage-1.18.2-40.1.60.jar is missing mods.toml file
+[02Oct2022 20:15:34.938] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\snoey\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.18.2-40.1.60\e421047d22848ab4c00f5fef7f2caadf623e86ee\mclanguage-1.18.2-40.1.60.jar is missing mods.toml file
+[02Oct2022 20:15:34.944] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\snoey\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.18.2-40.1.60\37e24d77d13b0868d7483cfaf9fda15cfc76e25b\fmlcore-1.18.2-40.1.60.jar is missing mods.toml file
+[02Oct2022 20:15:35.451] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: Found 1 dependencies adding them to mods collection
+[02Oct2022 20:15:40.756] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[02Oct2022 20:15:40.905] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeserveruserdev' with arguments [--gameDir, ., --debug, --stacktrace, --scan]
+[02Oct2022 20:15:41.519] [main/WARN] [mixin/]: Reference map 'skycreate.refmap.json' for skycreate.mixins.json could not be read. If this is a development environment you can ignore this message
+[02Oct2022 20:15:41.920] [main/INFO] [mixin/]: Remapping refMap notreepunching.refmap.json using D:\Repos\Create-SkyBlock/build/createSrgToMcp/output.srg
+[02Oct2022 20:15:41.922] [main/INFO] [mixin/]: Remapping refMap notreepunching.refmap.json using D:\Repos\Create-SkyBlock/build/createSrgToMcp/output.srg
+[02Oct2022 20:15:41.925] [main/INFO] [mixin/]: Remapping refMap flywheel.refmap.json using D:\Repos\Create-SkyBlock/build/createSrgToMcp/output.srg
+[02Oct2022 20:15:41.927] [main/INFO] [mixin/]: Remapping refMap create.refmap.json using D:\Repos\Create-SkyBlock/build/createSrgToMcp/output.srg
+[02Oct2022 20:15:41.931] [main/INFO] [mixin/]: Remapping refMap patchouli.refmap.json using D:\Repos\Create-SkyBlock/build/createSrgToMcp/output.srg
+[02Oct2022 20:15:41.935] [main/INFO] [mixin/]: Remapping refMap shutupexperimentalsettings.refmap.json using D:\Repos\Create-SkyBlock/build/createSrgToMcp/output.srg
+[02Oct2022 20:15:42.725] [main/ERROR] [net.minecraft.server.Main/FATAL]: Failed to start the minecraft server
+joptsimple.UnrecognizedOptionException: debug is not a recognized option
+	at joptsimple.OptionException.unrecognizedOption(OptionException.java:108) ~[jopt-simple-5.0.4.jar%2334!/:?]
+	at joptsimple.OptionParser.handleLongOptionToken(OptionParser.java:510) ~[jopt-simple-5.0.4.jar%2334!/:?]
+	at joptsimple.OptionParserState$2.handleArgument(OptionParserState.java:56) ~[jopt-simple-5.0.4.jar%2334!/:?]
+	at joptsimple.OptionParser.parse(OptionParser.java:396) ~[jopt-simple-5.0.4.jar%2334!/:?]
+	at net.minecraft.server.Main.main(Main.java:91) ~[forge-1.18.2-40.1.60_mapped_official_1.18.2-recomp.jar%2379!/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at net.minecraftforge.fml.loading.targets.ForgeServerUserdevLaunchHandler.lambda$launchService$0(ForgeServerUserdevLaunchHandler.java:21) ~[fmlloader-1.18.2-40.1.60.jar%230!/:?]
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37) [modlauncher-9.1.3.jar%2311!/:?]
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-9.1.3.jar%2311!/:?]
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-9.1.3.jar%2311!/:?]
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:106) [modlauncher-9.1.3.jar%2311!/:?]
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:77) [modlauncher-9.1.3.jar%2311!/:?]
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-9.1.3.jar%2311!/:?]
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-9.1.3.jar%2311!/:?]
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:149) [bootstraplauncher-1.0.0.jar:?]

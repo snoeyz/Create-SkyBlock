@@ -113,7 +113,7 @@ public class PulverizerHandler {
                 world.setBlock(targetPos, fluidState.createLegacyBlock(), 3);
                 break;
             case Stone:
-                world.setBlock(targetPos, (world.getRandom().nextInt(100) >= 50 ? Blocks.TUFF : Blocks.COBBLESTONE).defaultBlockState(), 3);
+                world.setBlock(targetPos, Blocks.COBBLESTONE.defaultBlockState(), 3);
                 break;
             case Gravel:
                 world.setBlock(targetPos, Blocks.SAND.defaultBlockState(), Block.UPDATE_ALL);
