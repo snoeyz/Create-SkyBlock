@@ -1,5 +1,9 @@
 package com.snoeyz.skycreate.events;
 
+import com.simibubi.create.AllBlockPartials;
+import com.simibubi.create.AllTags.AllBlockTags;
+import com.simibubi.create.content.palettes.AllPaletteBlocks;
+import com.simibubi.create.content.palettes.AllPaletteStoneTypes;
 import com.snoeyz.skycreate.advancement.SCAdvancements;
 import com.snoeyz.skycreate.util.WorldUtil;
 
@@ -21,6 +25,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.event.entity.player.AdvancementEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -43,9 +48,30 @@ public class CommonEvents {
         if (!event.getWorld().isClientSide()) { // Server-side check
             ServerLevel overworld = event.getWorld().getServer().overworld();
             if (WorldUtil.isSkyCreate(overworld)) {
-                BlockPos spawnPos = new BlockPos(6, 67, 6);
+                BlockPos spawnPos = new BlockPos(6, 64, 6);
                 event.setCanceled(true);
                 overworld.setDefaultSpawnPos(spawnPos, 0f);
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onFluidPlaceBlock(BlockEvent.FluidPlaceBlockEvent event) {
+        if (!event.getWorld().isClientSide()) { // Server-side check
+            if (WorldUtil.isSkyCreate(event.getWorld().getServer().overworld())) {
+                //BlockState liquidState = event.getWorld().getBlockState(event.getLiquidPos());
+                BlockState blockBelow = event.getWorld().getBlockState(event.getPos().below());
+                BlockState newBlock = null;
+                if (event.getNewState().is(Blocks.COBBLESTONE)) {
+                    if (blockBelow.is(Blocks.BONE_BLOCK)) {
+                        newBlock = Blocks.CALCITE.defaultBlockState();
+                    } else if (blockBelow.is(Blocks.LAPIS_BLOCK)) {
+                        newBlock = AllPaletteStoneTypes.ASURINE.baseBlock.get().defaultBlockState();
+                    }
+                }
+                if (newBlock != null) {
+                    event.setNewState(newBlock);
+                }
             }
         }
     }
