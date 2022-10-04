@@ -13,15 +13,15 @@
   "itemResults": [
     {
       "item": "minecraft:iron_nugget",
-      "chance": 0.2
+      "chance": 0.4
     },
     {
       "item": "create:zinc_ingot",
-      "chance": 0.2
+      "chance": 0.4
     },
     {
       "item": "create:copper_nugget",
-      "chance": 0.1
+      "chance": 0.2
     }
   ],
   "processingTime": 200

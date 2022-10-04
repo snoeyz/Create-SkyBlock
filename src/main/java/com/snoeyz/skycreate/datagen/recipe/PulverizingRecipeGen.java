@@ -42,9 +42,9 @@ public class PulverizingRecipeGen extends SkyCreateRecipeProvider {
 
     STONE = pulverize(I::stone, b -> b.duration(200)
             .blockOutput(Items.COBBLESTONE)
-            .output(.2f, Items.IRON_NUGGET)
-            .output(.2f, AllItems.ZINC_INGOT.get())
-            .output(.1f, AllItems.COPPER_NUGGET.get())),
+            .output(.4f, Items.IRON_NUGGET)
+            .output(.4f, AllItems.ZINC_INGOT.get())
+            .output(.2f, AllItems.COPPER_NUGGET.get())),
 
     TUFF = pulverize(I::tuff, b -> b.duration(200)
             .output(.25f, Items.FLINT)
