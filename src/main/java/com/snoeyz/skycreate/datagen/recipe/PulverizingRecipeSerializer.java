@@ -4,7 +4,6 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.simibubi.create.content.contraptions.processing.ProcessingOutput;
-import com.simibubi.create.foundation.fluid.FluidHelper;
 import com.snoeyz.skycreate.recipe.PulverizingRecipe;
 
 import net.minecraft.core.NonNullList;
@@ -13,7 +12,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.registries.ForgeRegistryEntry;
 
 public class PulverizingRecipeSerializer extends ForgeRegistryEntry<RecipeSerializer<?>>
@@ -22,17 +20,13 @@ implements RecipeSerializer<PulverizingRecipe> {
     public PulverizingRecipeSerializer() {}
 
     protected void writeToJson(JsonObject json, PulverizingRecipe recipe) {
-        JsonArray jsonIngredients = new JsonArray();
         JsonArray jsonBlockOutputs = new JsonArray();
         JsonArray jsonItemOutputs = new JsonArray();
 
-        recipe.getIngredients().forEach(i -> jsonIngredients.add(i.toJson()));
-
         recipe.getOutputBlocks().forEach(o -> jsonBlockOutputs.add(o.serialize()));
-        recipe.getOutputFluids().forEach(o -> jsonBlockOutputs.add(FluidHelper.serializeFluidStack(o)));
         recipe.getOutputItems().forEach(o -> jsonItemOutputs.add(o.serialize()));
 
-        json.add("ingredients", jsonIngredients);
+        json.add("ingredient", recipe.getIngredient().toJson());
         json.add("blockResults", jsonBlockOutputs);
         json.add("itemResults", jsonItemOutputs);
 
@@ -43,30 +37,21 @@ implements RecipeSerializer<PulverizingRecipe> {
 
     protected PulverizingRecipe readFromJson(ResourceLocation recipeId, JsonObject json) {
         PulverizingRecipeBuilder builder = new PulverizingRecipeBuilder(recipeId);
-        NonNullList<Ingredient> ingredients = NonNullList.create();
-        NonNullList<ProcessingOutput> blockResults = NonNullList.create();
+        NonNullList<PulverizingBlockOutput> blockResults = NonNullList.create();
         NonNullList<ProcessingOutput> itemResults = NonNullList.create();
-        NonNullList<FluidStack> fluidResults = NonNullList.create();
 
-        for (JsonElement je : GsonHelper.getAsJsonArray(json, "ingredients")) {
-            ingredients.add(Ingredient.fromJson(je));
-        }
+        Ingredient ingredient = Ingredient.fromJson(GsonHelper.getAsJsonObject(json, "ingredient"));
 
         for (JsonElement je : GsonHelper.getAsJsonArray(json, "blockResults")) {
-            JsonObject jsonObject = je.getAsJsonObject();
-            if (GsonHelper.isValidNode(jsonObject, "fluid"))
-                fluidResults.add(FluidHelper.deserializeFluidStack(jsonObject));
-            else
-                blockResults.add(ProcessingOutput.deserialize(je));
+            blockResults.add(PulverizingBlockOutput.deserialize(je));
         }
 
         for (JsonElement je : GsonHelper.getAsJsonArray(json, "itemResults")) {
             itemResults.add(ProcessingOutput.deserialize(je));
         }
 
-        builder.withItemIngredients(ingredients)
+        builder.withItemIngredient(ingredient)
             .withBlockOutputs(blockResults)
-            .withFluidOutputs(fluidResults)
             .withItemOutputs(itemResults);
 
         if (GsonHelper.isValidNode(json, "processingTime"))
@@ -77,18 +62,13 @@ implements RecipeSerializer<PulverizingRecipe> {
     }
 
     protected void writeToBuffer(FriendlyByteBuf buffer, PulverizingRecipe recipe) {
-        NonNullList<Ingredient> ingredients = recipe.getIngredients();
-        NonNullList<ProcessingOutput> blockOutputs = recipe.getOutputBlocks();
+        NonNullList<PulverizingBlockOutput> blockOutputs = recipe.getOutputBlocks();
         NonNullList<ProcessingOutput> itemOutputs = recipe.getOutputItems();
-        NonNullList<FluidStack> fluidOutputs = recipe.getOutputFluids();
 
-        buffer.writeVarInt(ingredients.size());
-        ingredients.forEach(i -> i.toNetwork(buffer));
+        recipe.getIngredient().toNetwork(buffer);
 
         buffer.writeVarInt(blockOutputs.size());
         blockOutputs.forEach(o -> o.write(buffer));
-        buffer.writeVarInt(fluidOutputs.size());
-        fluidOutputs.forEach(o -> o.writeToPacket(buffer));
         buffer.writeVarInt(itemOutputs.size());
         itemOutputs.forEach(o -> o.write(buffer));
 
@@ -96,30 +76,21 @@ implements RecipeSerializer<PulverizingRecipe> {
     }
 
     protected PulverizingRecipe readFromBuffer(ResourceLocation recipeId, FriendlyByteBuf buffer) {
-        NonNullList<Ingredient> ingredients = NonNullList.create();
-        NonNullList<ProcessingOutput> blockResults = NonNullList.create();
+        NonNullList<PulverizingBlockOutput> blockResults = NonNullList.create();
         NonNullList<ProcessingOutput> itemResults = NonNullList.create();
-        NonNullList<FluidStack> fluidResults = NonNullList.create();
+
+        Ingredient ingredient = Ingredient.fromNetwork(buffer);
 
         int size = buffer.readVarInt();
         for (int i = 0; i < size; i++)
-            ingredients.add(Ingredient.fromNetwork(buffer));
+            blockResults.add(PulverizingBlockOutput.read(buffer));
 
         size = buffer.readVarInt();
         for (int i = 0; i < size; i++)
-            blockResults.add(ProcessingOutput.read(buffer));
+            itemResults.add(ProcessingOutput.read(buffer));
 
-        size = buffer.readVarInt();
-        for (int i = 0; i < size; i++)
-            fluidResults.add(FluidStack.readFromPacket(buffer));
-
-        size = buffer.readVarInt();
-        for (int i = 0; i < size; i++)
-            blockResults.add(ProcessingOutput.read(buffer));
-
-        PulverizingRecipe recipe = new PulverizingRecipeBuilder(recipeId).withItemIngredients(ingredients)
+        PulverizingRecipe recipe = new PulverizingRecipeBuilder(recipeId).withItemIngredient(ingredient)
             .withBlockOutputs(blockResults)
-            .withFluidOutputs(fluidResults)
             .withItemOutputs(itemResults)
             .duration(buffer.readVarInt())
             .build();

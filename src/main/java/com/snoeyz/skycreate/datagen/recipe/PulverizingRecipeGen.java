@@ -12,6 +12,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -29,22 +30,22 @@ public class PulverizingRecipeGen extends SkyCreateRecipeProvider {
             .output(.70f, ForgeRegistries.ITEMS.getValue(new ResourceLocation("notreepunching", "stone_loose_rock")), 3)),
 
     GRAVEL = pulverize(I::gravel, b -> b.duration(200)
-            .blockOutput(Items.SAND)
+            .blockOutput(Blocks.SAND)
             .output(.1f, Items.CLAY_BALL)
             .output(.2f, Items.FLINT)),
 
     ICE = pulverize(I::ice, b -> b.duration(200)
-            .blockOutput(Fluids.FLOWING_WATER, 1000)),
+            .blockOutput(Blocks.WATER, Fluids.WATER)),
 
     LOGS = pulverize("logs", b -> b.duration(200)
             .require(I.logs())
-            .output(Items.STICK, 4)),
+            .output(Items.STICK, 2)
+            .output(.3f, Items.STICK,2)),
 
     STONE = pulverize(I::stone, b -> b.duration(200)
-            .blockOutput(Items.COBBLESTONE)
-            .output(.4f, Items.IRON_NUGGET)
-            .output(.4f, AllItems.ZINC_INGOT.get())
-            .output(.2f, AllItems.COPPER_NUGGET.get())),
+            .blockOutput(Blocks.COBBLESTONE)
+            .output(ForgeRegistries.ITEMS.getValue(new ResourceLocation("notreepunching", "stone_loose_rock")), 2)
+            .output(.25f, ForgeRegistries.ITEMS.getValue(new ResourceLocation("notreepunching", "stone_loose_rock")))),
 
     TUFF = pulverize(I::tuff, b -> b.duration(200)
             .output(.25f, Items.FLINT)
@@ -66,7 +67,7 @@ public class PulverizingRecipeGen extends SkyCreateRecipeProvider {
             ItemLike iItemProvider = singleIngredient.get();
             transform
                     .apply(new PulverizingRecipeBuilder(new ResourceLocation(SkyCreateMod.MOD_ID, RegisteredObjects.getKeyOrThrow(iItemProvider.asItem())
-                                    .getPath())).withItemIngredients(Ingredient.of(iItemProvider)))
+                                    .getPath())).withItemIngredient(Ingredient.of(iItemProvider)))
                     .build(c);
         };
         all.add(generatedRecipe);

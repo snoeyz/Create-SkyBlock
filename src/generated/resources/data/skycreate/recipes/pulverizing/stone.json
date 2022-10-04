@@ -1,27 +1,22 @@
 {
   "type": "skycreate:pulverizing",
-  "ingredients": [
-    {
-      "item": "minecraft:stone"
-    }
-  ],
+  "ingredient": {
+    "item": "minecraft:stone"
+  },
   "blockResults": [
     {
+      "block": "minecraft:cobblestone",
       "item": "minecraft:cobblestone"
     }
   ],
   "itemResults": [
     {
-      "item": "minecraft:iron_nugget",
-      "chance": 0.4
+      "item": "notreepunching:stone_loose_rock",
+      "count": 2
     },
     {
-      "item": "create:zinc_ingot",
-      "chance": 0.4
-    },
-    {
-      "item": "create:copper_nugget",
-      "chance": 0.2
+      "item": "notreepunching:stone_loose_rock",
+      "chance": 0.25
     }
   ],
   "processingTime": 200

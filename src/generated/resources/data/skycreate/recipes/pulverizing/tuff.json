@@ -1,10 +1,8 @@
 {
   "type": "skycreate:pulverizing",
-  "ingredients": [
-    {
-      "item": "minecraft:tuff"
-    }
-  ],
+  "ingredient": {
+    "item": "minecraft:tuff"
+  },
   "blockResults": [],
   "itemResults": [
     {

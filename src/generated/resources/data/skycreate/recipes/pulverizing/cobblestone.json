@@ -1,10 +1,8 @@
 {
   "type": "skycreate:pulverizing",
-  "ingredients": [
-    {
-      "item": "minecraft:cobblestone"
-    }
-  ],
+  "ingredient": {
+    "item": "minecraft:cobblestone"
+  },
   "blockResults": [],
   "itemResults": [
     {

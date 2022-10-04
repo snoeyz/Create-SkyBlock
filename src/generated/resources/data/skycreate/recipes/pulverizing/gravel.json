@@ -1,12 +1,11 @@
 {
   "type": "skycreate:pulverizing",
-  "ingredients": [
-    {
-      "item": "minecraft:gravel"
-    }
-  ],
+  "ingredient": {
+    "item": "minecraft:gravel"
+  },
   "blockResults": [
     {
+      "block": "minecraft:sand",
       "item": "minecraft:sand"
     }
   ],

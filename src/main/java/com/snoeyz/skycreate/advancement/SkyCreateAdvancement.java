@@ -24,6 +24,7 @@ import net.minecraft.advancements.critereon.UsingItemTrigger;
 import net.minecraft.advancements.critereon.EntityPredicate.Composite;
 import net.minecraft.commands.CommandFunction;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.player.Player;
@@ -81,9 +82,10 @@ public class SkyCreateAdvancement {
     public boolean isAlreadyAwardedTo(Player player) {
         if (!(player instanceof ServerPlayer sp))
             return true;
-        Advancement advancement = sp.getServer()
-            .getAdvancements()
-            .getAdvancement(SkyCreateMod.asResource(id));
+        MinecraftServer server = sp.getServer();
+        if (server == null)
+            return true;
+        Advancement advancement = server.getAdvancements().getAdvancement(SkyCreateMod.asResource(id));
         if (advancement == null)
             return true;
         return sp.getAdvancements()

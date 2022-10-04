@@ -1,6 +1,7 @@
 package com.snoeyz.skycreate.recipe;
 
 import com.simibubi.create.content.contraptions.processing.ProcessingOutput;
+import com.snoeyz.skycreate.datagen.recipe.PulverizingBlockOutput;
 import com.snoeyz.skycreate.datagen.recipe.PulverizingRecipeBuilder.PulverizingRecipeParams;
 import com.snoeyz.skycreate.registry.SCRecipeTypes;
 
@@ -13,28 +14,33 @@ import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.fluids.FluidStack;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.items.wrapper.RecipeWrapper;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.Random;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
 public class PulverizingRecipe implements Recipe<RecipeWrapper> {
+    
+    private static final Random r = new Random();
 
     protected ResourceLocation id;
-    protected NonNullList<Ingredient> ingredients;
+    protected Ingredient ingredient;
     protected NonNullList<ProcessingOutput> outputItems;
-    protected NonNullList<ProcessingOutput> outputBlocks;
-    protected NonNullList<FluidStack> outputFluids;
+    protected NonNullList<PulverizingBlockOutput> outputBlocks;
     protected int processingDuration;
 
     public PulverizingRecipe(PulverizingRecipeParams params) {
         id = params.id;
-        ingredients = params.ingredients;
+        ingredient = params.ingredient;
         outputItems = params.itemResults;
         outputBlocks = params.blockResults;
-        outputFluids = params.fluidResults;
         processingDuration = params.processingDuration;
     }
 
@@ -42,28 +48,45 @@ public class PulverizingRecipe implements Recipe<RecipeWrapper> {
     public boolean matches(RecipeWrapper inv, Level worldIn) {
         if (inv.isEmpty())
             return false;
-        return ingredients.get(0).test(inv.getItem(0));
+        return ingredient.test(inv.getItem(0));
     }
 
-    public NonNullList<Ingredient> getIngredients() {
-        return ingredients;
+    public Ingredient getIngredient() {
+        return ingredient;
     }
 
     public NonNullList<ProcessingOutput> getOutputItems() {
         return outputItems;
     }
 
-    public NonNullList<ProcessingOutput> getOutputBlocks() {
+    public NonNullList<PulverizingBlockOutput> getOutputBlocks() {
         return outputBlocks;
-    }
-
-    public NonNullList<FluidStack> getOutputFluids() {
-        return outputFluids;
     }
 
     public int getProcessingDuration() {
         return processingDuration;
     }
+
+    public BlockState rollResultBlockState() {
+        int ndx = r.nextInt(outputBlocks.size());
+        return outputBlocks.get(ndx).getBlockState();
+    }
+    
+    public List<ItemStack> rollResultItems() {
+        List<ItemStack> results = new ArrayList<>();
+        for (int i = 0; i < outputItems.size(); i++) {
+            ProcessingOutput output = outputItems.get(i);
+            ItemStack stack = output.rollOutput();
+            if (!stack.isEmpty())
+                results.add(stack);
+        }
+        return results;
+    }
+    
+    @Override
+    public NonNullList<Ingredient> getIngredients() {
+        return NonNullList.of(ingredient);
+     }
 
     @Override
     public boolean canCraftInDimensions(int width, int height) {
@@ -94,5 +117,19 @@ public class PulverizingRecipe implements Recipe<RecipeWrapper> {
     @Override
     public RecipeType<?> getType() {
         return SCRecipeTypes.PULVERIZING.getType();
+    }
+
+    private boolean appliesTo(BlockState target) {
+        return ingredient.test(new ItemStack(target.getBlock(), 1));
+    }
+
+    public static Optional<PulverizingRecipe> getRecipe(Level world, BlockState target) {
+        List<PulverizingRecipe> all = world.getRecipeManager().getAllRecipesFor(SCRecipeTypes.PULVERIZING.getType());
+        for (PulverizingRecipe pulverizingRecipe : all) {
+            if (!pulverizingRecipe.appliesTo(target))
+                continue;
+            return Optional.of(pulverizingRecipe);
+        }
+        return Optional.empty();
     }
 }

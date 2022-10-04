@@ -1,15 +1,18 @@
 {
   "type": "skycreate:pulverizing",
-  "ingredients": [
-    {
-      "tag": "minecraft:logs"
-    }
-  ],
+  "ingredient": {
+    "tag": "minecraft:logs"
+  },
   "blockResults": [],
   "itemResults": [
     {
       "item": "minecraft:stick",
-      "count": 4
+      "count": 2
+    },
+    {
+      "item": "minecraft:stick",
+      "count": 2,
+      "chance": 0.3
     }
   ],
   "processingTime": 200

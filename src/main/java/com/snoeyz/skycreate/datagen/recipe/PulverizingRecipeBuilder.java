@@ -21,6 +21,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.common.crafting.conditions.ICondition;
@@ -36,12 +37,8 @@ public class PulverizingRecipeBuilder {
         recipeConditions = new ArrayList<>();
     }
 
-    public PulverizingRecipeBuilder withItemIngredients(Ingredient... ingredients) {
-        return withItemIngredients(NonNullList.of(Ingredient.EMPTY, ingredients));
-    }
-
-    public PulverizingRecipeBuilder withItemIngredients(NonNullList<Ingredient> ingredients) {
-        params.ingredients = ingredients;
+    public PulverizingRecipeBuilder withItemIngredient(Ingredient ingredient) {
+        params.ingredient = ingredient;
         return this;
     }
 
@@ -58,11 +55,11 @@ public class PulverizingRecipeBuilder {
         return this;
     }
 
-    public PulverizingRecipeBuilder withBlockOutputs(ProcessingOutput... outputs) {
-        return withBlockOutputs(NonNullList.of(ProcessingOutput.EMPTY, outputs));
+    public PulverizingRecipeBuilder withBlockOutputs(PulverizingBlockOutput... outputs) {
+        return withBlockOutputs(NonNullList.of(PulverizingBlockOutput.EMPTY, outputs));
     }
 
-    public PulverizingRecipeBuilder withBlockOutputs(NonNullList<ProcessingOutput> outputs) {
+    public PulverizingRecipeBuilder withBlockOutputs(NonNullList<PulverizingBlockOutput> outputs) {
         params.blockResults = outputs;
         return this;
     }
@@ -95,12 +92,12 @@ public class PulverizingRecipeBuilder {
     }
 
     public PulverizingRecipeBuilder require(Ingredient ingredient) {
-        params.ingredients.add(ingredient);
+        params.ingredient = ingredient;
         return this;
     }
     
     public PulverizingRecipeBuilder require(ResourceLocation ingredient) {
-        params.ingredients.add(DataIngredient.ingredient(null, ingredient));
+        params.ingredient = DataIngredient.ingredient(null, ingredient);
         return this;
     }
 
@@ -133,69 +130,32 @@ public class PulverizingRecipeBuilder {
         return this;
     }
 
-    public PulverizingRecipeBuilder blockOutput(ItemLike item) {
-        return blockOutput(item, 1);
+    public PulverizingRecipeBuilder blockOutput(Block output) {
+        return blockOutput(new PulverizingBlockOutput(new ItemStack(output, 1), output.defaultBlockState()));
     }
 
-    public PulverizingRecipeBuilder blockOutput(float chance, ItemLike item) {
-        return blockOutput(chance, item, 1);
-    }
-
-    public PulverizingRecipeBuilder blockOutput(ItemLike item, int amount) {
-        return blockOutput(1, item, amount);
-    }
-
-    public PulverizingRecipeBuilder blockOutput(float chance, ItemLike item, int amount) {
-        return blockOutput(chance, new ItemStack(item, amount));
-    }
-
-    public PulverizingRecipeBuilder blockOutput(ItemStack output) {
-        return blockOutput(1, output);
-    }
-
-    public PulverizingRecipeBuilder blockOutput(float chance, ItemStack output) {
-        return blockOutput(new ProcessingOutput(output, chance));
+    public PulverizingRecipeBuilder blockOutput(Block output, Fluid fluid) {
+        fluid = FluidHelper.convertToStill(fluid);
+        return blockOutput(new PulverizingBlockOutput(new FluidStack(fluid, 1000), output.defaultBlockState()));
     }
     
-    public PulverizingRecipeBuilder blockOutput(ProcessingOutput output) {
+    public PulverizingRecipeBuilder blockOutput(PulverizingBlockOutput output) {
         params.blockResults.add(output);
-        return this;
-    }
-
-    public PulverizingRecipeBuilder blockOutput(Fluid fluid, int amount) {
-        fluid = FluidHelper.convertToStill(fluid);
-        return blockOutput(new FluidStack(fluid, amount));
-    }
-
-    public PulverizingRecipeBuilder blockOutput(FluidStack fluidStack) {
-        params.fluidResults.add(fluidStack);
-        return this;
-    }
-
-    public PulverizingRecipeBuilder withFluidOutputs(FluidStack... outputs) {
-        return withFluidOutputs(NonNullList.of(FluidStack.EMPTY, outputs));
-    }
-
-    public PulverizingRecipeBuilder withFluidOutputs(NonNullList<FluidStack> outputs) {
-        params.fluidResults = outputs;
         return this;
     }
 
     public static class PulverizingRecipeParams {
 
         public ResourceLocation id;
-        public NonNullList<Ingredient> ingredients;
+        public Ingredient ingredient;
         public NonNullList<ProcessingOutput> itemResults;
-        public NonNullList<ProcessingOutput> blockResults;
-        public NonNullList<FluidStack> fluidResults;
+        public NonNullList<PulverizingBlockOutput> blockResults;
         public int processingDuration;
 
         protected PulverizingRecipeParams(ResourceLocation id) {
             this.id = id;
-            ingredients = NonNullList.create();
             itemResults = NonNullList.create();
             blockResults = NonNullList.create();
-            fluidResults = NonNullList.create();
             processingDuration = 0;
         }
 

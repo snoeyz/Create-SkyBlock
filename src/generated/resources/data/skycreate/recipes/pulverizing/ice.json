@@ -1,14 +1,12 @@
 {
   "type": "skycreate:pulverizing",
-  "ingredients": [
-    {
-      "item": "minecraft:ice"
-    }
-  ],
+  "ingredient": {
+    "item": "minecraft:ice"
+  },
   "blockResults": [
     {
-      "fluid": "minecraft:water",
-      "amount": 1000
+      "block": "minecraft:water",
+      "fluid": "minecraft:water"
     }
   ],
   "itemResults": [],
