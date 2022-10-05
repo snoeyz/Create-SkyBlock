@@ -6,11 +6,13 @@ import com.snoeyz.skycreate.datagen.recipe.PulverizingRecipeBuilder.PulverizingR
 import com.snoeyz.skycreate.registry.SCRecipeTypes;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.NonNullList;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
@@ -131,5 +133,15 @@ public class PulverizingRecipe implements Recipe<RecipeWrapper> {
             return Optional.of(pulverizingRecipe);
         }
         return Optional.empty();
+    }
+
+    public static PulverizingRecipe getRecipe(ResourceLocation recipeId) {
+        return (PulverizingRecipe)
+            Minecraft
+                .getInstance()
+                .getConnection()
+                .getRecipeManager()
+                .byKey(recipeId)
+                .orElseThrow();
     }
 }

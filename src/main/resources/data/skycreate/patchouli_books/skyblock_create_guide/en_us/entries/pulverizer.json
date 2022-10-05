@@ -6,7 +6,52 @@
         {
             "type": "patchouli:spotlight",
             "item": "skycreate:pulverizer",
-            "text": "This pulverizer is a custom contraption that can be used on the following blocks:$(br)$(li)$(item)Cobblestone$() --> [1-3] $(item)Loose Stone Rock$()$(li)$(item)Ice$() --> $(item)Water$() source block$(li)Any Log Block --> [1-4]$(item)Stick$()"
+            "text": "This pulverizer is a custom contraption that can be used on the following blocks:$(br)$(li)$(l:pulverizer#andesite)Andesite$()$(li)$(l:pulverizer#andesite_cobblestone)Andesite Cobblestone$()$(li)$(l:pulverizer#cobblestone)Cobblestone$()$(li)$(l:pulverizer#diorite)Diorite$()$(li)$(l:pulverizer#diorite_cobblestone)Diorite Cobblestone$()$(li)$(l:pulverizer#granite)Granite$()$(li)$(l:pulverizer#granite_cobblestone)Granite Cobblestone$()$(li)$(l:pulverizer#gravel)Gravel$()$(li)$(l:pulverizer#stone)Stone$()"
+        },
+        {
+            "type": "skycreate:pulverizing_recipe",
+            "recipe": "skycreate:pulverizing/andesite",
+            "anchor": "andesite"
+        },
+        {
+            "type": "skycreate:pulverizing_recipe",
+            "recipe": "skycreate:pulverizing/andesite_cobblestone",
+            "anchor": "andesite_cobblestone"
+        },
+        {
+            "type": "skycreate:pulverizing_recipe",
+            "recipe": "skycreate:pulverizing/cobblestone",
+            "anchor": "cobblestone"
+        },
+        {
+            "type": "skycreate:pulverizing_recipe",
+            "recipe": "skycreate:pulverizing/diorite",
+            "anchor": "diorite"
+        },
+        {
+            "type": "skycreate:pulverizing_recipe",
+            "recipe": "skycreate:pulverizing/diorite_cobblestone",
+            "anchor": "diorite_cobblestone"
+        },
+        {
+            "type": "skycreate:pulverizing_recipe",
+            "recipe": "skycreate:pulverizing/granite",
+            "anchor": "granite"
+        },
+        {
+            "type": "skycreate:pulverizing_recipe",
+            "recipe": "skycreate:pulverizing/granite_cobblestone",
+            "anchor": "granite_cobblestone"
+        },
+        {
+            "type": "skycreate:pulverizing_recipe",
+            "recipe": "skycreate:pulverizing/gravel",
+            "anchor": "gravel"
+        },
+        {
+            "type": "skycreate:pulverizing_recipe",
+            "recipe": "skycreate:pulverizing/stone",
+            "anchor": "stone"
         }
     ]
 }

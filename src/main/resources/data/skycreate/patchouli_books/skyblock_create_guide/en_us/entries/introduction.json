@@ -12,7 +12,7 @@
         {
             "type": "patchouli:quest",
             "trigger": "skycreate:welcome",
-            "title": "That was easy!",
+            "title": "That Was Easy!",
             "text": "Congratulations! Simply by opening up this book, you're already well on your way to becoming a SkyBlock Create master!$(br)By earning this achevement, you should find in your inventory a $(item)pulverizer$(), a $(item)hand crank$(), and a $(item)wrench$()!"
         },
         {
@@ -28,7 +28,11 @@
         {
             "type": "patchouli:spotlight",
             "item": "create:wrench",
-            "text": "While, eventually, you'll be able to fully automate many tasks, for now, you'll have to use the $(item)hand crank$() to power many of the contraptions in the early stages.$(br)Attach the hand crank to the input shaft of a contraption and power it by right-clicking on the crank.$(br)NOTE: Using the hand crank rapidly drains your hunger bar, so be careful not to starve!"
+            "text": "While, eventually, you'll be able to fully automate many tasks, for now, you'll have to use the $(item)hand crank$() to power many of the contraptions in the early stages."
+        },
+        {
+            "type": "patchouli:text",
+            "text": "Attach the hand crank to the input shaft of a contraption and power it by right-clicking on the crank.$(br)NOTE: Using the hand crank rapidly drains your hunger bar, so be careful not to starve!"
         }
     ]
 }

@@ -14,5 +14,5 @@ public class SCTileEntities {
             .renderer(() -> PulverizerRenderer::new)
             .register();
 
-            public static void register() {}
+    public static void register() {}
 }

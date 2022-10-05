@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.snoeyz.skycreate.advancement.SCAdvancements;
 import com.snoeyz.skycreate.advancement.SCTriggers;
+import com.snoeyz.skycreate.compat.patchouli.SCVariableHelper;
 import com.snoeyz.skycreate.datagen.LangMerger;
 import com.snoeyz.skycreate.datagen.recipe.PulverizingRecipeGen;
 import com.snoeyz.skycreate.datagen.recipe.StandardRecipeGen;
@@ -69,6 +70,7 @@ public class SkyCreateMod
         event.enqueueWork(() -> {
             SCAdvancements.register();
             SCTriggers.register();
+            SCVariableHelper.register();
         });
     }
 

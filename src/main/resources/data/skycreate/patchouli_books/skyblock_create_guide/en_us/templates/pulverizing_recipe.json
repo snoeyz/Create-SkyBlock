@@ -1,0 +1,94 @@
+{
+    "processor": "com.snoeyz.skycreate.compat.patchouli.processors.PulverizingRecipeProcessor",
+    "components": [
+        {
+            "type": "patchouli:header", "text": "#input->iname#", "x": -1, "y": -1
+        },
+        {
+            "type": "patchouli:item", "item": "#input", "framed": true, "x": 50, "y": 15
+        },
+        
+        {
+            "type": "patchouli:header", "text": "Block Output:", "guard": "#bOut1->iexists", "x": -1, "y": 50
+        },
+        {
+            "type": "patchouli:item", "item": "#bOut1", "guard": "#bOut1->iexists", "x": 4, "y": 60
+        },
+        {
+            "type": "patchouli:item", "item": "#bOut2", "guard": "#bOut2->iexists", "x": 24, "y": 60
+        },
+        {
+            "type": "patchouli:item", "item": "#bOut3", "guard": "#bOut3->iexists", "x": 44, "y": 60
+        },
+        {
+            "type": "patchouli:item", "item": "#bOut4", "guard": "#bOut4->iexists", "x": 64, "y": 60
+        },
+        {
+            "type": "patchouli:item", "item": "#bOut5", "guard": "#bOut5->iexists", "x": 84, "y": 60
+        },
+        
+        {
+            "type": "patchouli:header", "text": "Item Drops:", "guard": "#dOut1->iexists", "x": -1, "y": 90
+        },
+        {
+            "type": "patchouli:item", "item": "#dOut1", "guard": "#dOut1->iexists", "x": 4, "y": 100
+        },
+        {
+            "type": "patchouli:text", "text": "#dOutChance1#%", "guard": "#dOutChance1->exists", "x": 4, "y": 120
+        },
+        {
+            "type": "patchouli:item", "item": "#dOut2", "guard": "#dOut2->iexists", "x": 24, "y": 100
+        },
+        {
+            "type": "patchouli:text", "text": "#dOutChance2#%", "guard": "#dOutChance2->exists", "x": 24, "y": 120
+        },
+        {
+            "type": "patchouli:item", "item": "#dOut3", "guard": "#dOut3->iexists", "x": 44, "y": 100
+        },
+        {
+            "type": "patchouli:text", "text": "#dOutChance3#%", "guard": "#dOutChance3->exists", "x": 44, "y": 120
+        },
+        {
+            "type": "patchouli:item", "item": "#dOut4", "guard": "#dOut4->iexists", "x": 64, "y": 100
+        },
+        {
+            "type": "patchouli:text", "text": "#dOutChance4#%", "guard": "#dOutChance4->exists", "x": 64, "y": 120
+        },
+        {
+            "type": "patchouli:item", "item": "#dOut5", "guard": "#dOut5->iexists", "x": 84, "y": 100
+        },
+        {
+            "type": "patchouli:text", "text": "#dOutChance5#%", "guard": "#dOutChance5->exists", "x": 84, "y": 120
+        },
+        {
+            "type": "patchouli:item", "item": "#dOut6", "guard": "#dOut6->iexists", "x": 4, "y": 140
+        },
+        {
+            "type": "patchouli:text", "text": "#dOutChance6#%", "guard": "#dOutChance6->exists", "x": 4, "y": 160
+        },
+        {
+            "type": "patchouli:item", "item": "#dOut7", "guard": "#dOut7->iexists", "x": 24, "y": 140
+        },
+        {
+            "type": "patchouli:text", "text": "#dOutChance7#%", "guard": "#dOutChance7->exists", "x": 24, "y": 160
+        },
+        {
+            "type": "patchouli:item", "item": "#dOut8", "guard": "#dOut8->iexists", "x": 44, "y": 140
+        },
+        {
+            "type": "patchouli:text", "text": "#dOutChance8#%", "guard": "#dOutChance8->exists", "x": 44, "y": 160
+        },
+        {
+            "type": "patchouli:item", "item": "#dOut9", "guard": "#dOut9->iexists", "x": 64, "y": 140
+        },
+        {
+            "type": "patchouli:text", "text": "#dOutChance9#%", "guard": "#dOutChance9->exists", "x": 64, "y": 160
+        },
+        {
+            "type": "patchouli:item", "item": "#dOut10", "guard": "#dOut10->iexists", "x": 84, "y": 140
+        },
+        {
+            "type": "patchouli:text", "text": "#dOutChance10#%", "guard": "#dOutChance10->exists", "x": 84, "y": 160
+        }
+    ]
+}
