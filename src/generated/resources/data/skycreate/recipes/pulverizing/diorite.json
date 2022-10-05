@@ -1,0 +1,23 @@
+{
+  "type": "skycreate:pulverizing",
+  "ingredient": {
+    "item": "minecraft:diorite"
+  },
+  "blockResults": [
+    {
+      "block": "notreepunching:diorite_cobblestone",
+      "item": "notreepunching:diorite_cobblestone"
+    }
+  ],
+  "itemResults": [
+    {
+      "item": "notreepunching:diorite_loose_rock",
+      "count": 2
+    },
+    {
+      "item": "notreepunching:diorite_loose_rock",
+      "chance": 0.25
+    }
+  ],
+  "processingTime": 200
+}

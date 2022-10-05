@@ -1,0 +1,27 @@
+{
+  "type": "skycreate:pulverizing",
+  "ingredient": {
+    "item": "notreepunching:andesite_cobblestone"
+  },
+  "blockResults": [],
+  "itemResults": [
+    {
+      "item": "notreepunching:stone_loose_rock",
+      "chance": 0.1
+    },
+    {
+      "item": "notreepunching:diorite_loose_rock",
+      "chance": 0.1
+    },
+    {
+      "item": "notreepunching:granite_loose_rock",
+      "chance": 0.1
+    },
+    {
+      "item": "notreepunching:andesite_loose_rock",
+      "count": 3,
+      "chance": 0.7
+    }
+  ],
+  "processingTime": 200
+}

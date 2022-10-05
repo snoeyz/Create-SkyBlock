@@ -1,0 +1,23 @@
+{
+  "type": "skycreate:pulverizing",
+  "ingredient": {
+    "item": "minecraft:granite"
+  },
+  "blockResults": [
+    {
+      "block": "notreepunching:granite_cobblestone",
+      "item": "notreepunching:granite_cobblestone"
+    }
+  ],
+  "itemResults": [
+    {
+      "item": "notreepunching:granite_loose_rock",
+      "count": 2
+    },
+    {
+      "item": "notreepunching:granite_loose_rock",
+      "chance": 0.25
+    }
+  ],
+  "processingTime": 200
+}
