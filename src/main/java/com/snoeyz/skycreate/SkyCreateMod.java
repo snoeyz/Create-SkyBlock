@@ -31,7 +31,7 @@ import org.slf4j.Logger;
 public class SkyCreateMod
 {
     private static final NonNullSupplier<CreateRegistrate> registrate = CreateRegistrate.lazy(SkyCreateMod.MOD_ID);
-    public static final CreativeModeTab MAIN_CREATIVE_TAB = new CreativeModGroup();
+    public static final CreativeModeTab MAIN_CREATIVE_TAB = new SkyCreateItemGroup();
 
     public static final String MOD_ID = "skycreate";
     // Directly reference a slf4j logger

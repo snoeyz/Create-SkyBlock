@@ -26,6 +26,7 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class PulverizingRecipeBuilder {
 
@@ -128,6 +129,10 @@ public class PulverizingRecipeBuilder {
     public PulverizingRecipeBuilder output(ProcessingOutput output) {
         params.itemResults.add(output);
         return this;
+    }
+
+    public PulverizingRecipeBuilder blockOutput(ResourceLocation outputResource) {
+        return blockOutput(ForgeRegistries.BLOCKS.getValue(outputResource));
     }
 
     public PulverizingRecipeBuilder blockOutput(Block output) {

@@ -23,36 +23,69 @@ public class PulverizingRecipeGen extends SkyCreateRecipeProvider {
 
     GeneratedRecipe
 
+    STONE = pulverize(I::stone, b -> b.duration(200)
+        .blockOutput(Blocks.COBBLESTONE)
+        .output(I.stoneLooseRock(), 2)
+        .output(.25f, I.stoneLooseRock())),
+
     COBBLESTONE = pulverize(I::cobblestone, b -> b.duration(200)
-            .output(.1f, ForgeRegistries.ITEMS.getValue(new ResourceLocation("notreepunching", "andesite_loose_rock")))
-            .output(.1f, ForgeRegistries.ITEMS.getValue(new ResourceLocation("notreepunching", "diorite_loose_rock")))
-            .output(.1f, ForgeRegistries.ITEMS.getValue(new ResourceLocation("notreepunching", "granite_loose_rock")))
-            .output(.70f, ForgeRegistries.ITEMS.getValue(new ResourceLocation("notreepunching", "stone_loose_rock")), 3)),
+        .output(.1f, I.andesiteLooseRock())
+        .output(.1f, I.dioriteLooseRock())
+        .output(.1f, I.graniteLooseRock())
+        .output(.70f, I.stoneLooseRock(), 3)),
+
+    ANDESITE = pulverize(I::andesite, b -> b.duration(200)
+        .blockOutput(new ResourceLocation("notreepunching", "andesite_cobblestone"))
+        .output(I.andesiteLooseRock(), 2)
+        .output(.25f, I.andesiteLooseRock())),
+
+    ANDESITE_COBBLESTONE = pulverize(I::andesiteCobblestone, b -> b.duration(200)
+        .output(.1f, I.stoneLooseRock())
+        .output(.1f, I.dioriteLooseRock())
+        .output(.1f, I.graniteLooseRock())
+        .output(.70f, I.andesiteLooseRock(), 3)),
+
+    DIORITE = pulverize(I::diorite, b -> b.duration(200)
+        .blockOutput(new ResourceLocation("notreepunching", "diorite_cobblestone"))
+        .output(I.dioriteLooseRock(), 2)
+        .output(.25f, I.dioriteLooseRock())),
+
+    DIORITE_COBBLESTONE = pulverize(I::dioriteCobblestone, b -> b.duration(200)
+        .output(.1f, I.stoneLooseRock())
+        .output(.1f, I.andesiteLooseRock())
+        .output(.1f, I.graniteLooseRock())
+        .output(.70f, I.dioriteLooseRock(), 3)),
+
+    GRANITE = pulverize(I::granite, b -> b.duration(200)
+        .blockOutput(new ResourceLocation("notreepunching", "granite_cobblestone"))
+        .output(I.graniteLooseRock(), 2)
+        .output(.25f, I.graniteLooseRock())),
+
+    GRANITE_COBBLESTONE = pulverize(I::graniteCobblestone, b -> b.duration(200)
+        .output(.1f, I.stoneLooseRock())
+        .output(.1f, I.dioriteLooseRock())
+        .output(.1f, I.andesiteLooseRock())
+        .output(.70f, I.graniteLooseRock(), 3)),
 
     GRAVEL = pulverize(I::gravel, b -> b.duration(200)
-            .blockOutput(Blocks.SAND)
-            .output(.1f, Items.CLAY_BALL)
-            .output(.2f, Items.FLINT)),
+        .blockOutput(Blocks.SAND)
+        .output(.1f, Items.CLAY_BALL)
+        .output(.25f, Items.FLINT)),
 
     ICE = pulverize(I::ice, b -> b.duration(200)
-            .blockOutput(Blocks.WATER, Fluids.WATER)),
+        .blockOutput(Blocks.WATER, Fluids.WATER)),
 
     LOGS = pulverize("logs", b -> b.duration(200)
-            .require(I.logs())
-            .output(Items.STICK, 2)
-            .output(.3f, Items.STICK,2)),
-
-    STONE = pulverize(I::stone, b -> b.duration(200)
-            .blockOutput(Blocks.COBBLESTONE)
-            .output(ForgeRegistries.ITEMS.getValue(new ResourceLocation("notreepunching", "stone_loose_rock")), 2)
-            .output(.25f, ForgeRegistries.ITEMS.getValue(new ResourceLocation("notreepunching", "stone_loose_rock")))),
+        .require(I.logs())
+        .output(Items.STICK, 2)
+        .output(.3f, Items.STICK,2)),
 
     TUFF = pulverize(I::tuff, b -> b.duration(200)
-            .output(.25f, Items.FLINT)
-            .output(.3f, AllItems.ZINC_INGOT.get())
-            .output(.3f, AllItems.COPPER_NUGGET.get())
-            .output(.3f, Items.IRON_NUGGET)
-            .output(.1f, Items.GOLD_NUGGET));
+        .output(.25f, Items.FLINT)
+        .output(.3f, AllItems.ZINC_INGOT.get())
+        .output(.3f, AllItems.COPPER_NUGGET.get())
+        .output(.3f, Items.IRON_NUGGET)
+        .output(.1f, Items.GOLD_NUGGET));
 
     public PulverizingRecipeGen(DataGenerator gen) {
         super(gen);
@@ -108,12 +141,53 @@ public class PulverizingRecipeGen extends SkyCreateRecipeProvider {
     }
 
     protected static class I {
+
         static ItemLike stone() {
             return Items.STONE;
         }
 
         static ItemLike cobblestone() {
             return Items.COBBLESTONE;
+        }
+
+        static ItemLike stoneLooseRock() {
+            return ForgeRegistries.ITEMS.getValue(new ResourceLocation("notreepunching", "stone_loose_rock"));
+        }
+        
+        static ItemLike andesite() {
+            return Items.ANDESITE;
+        }
+
+        static ItemLike andesiteCobblestone() {
+            return ForgeRegistries.ITEMS.getValue(new ResourceLocation("notreepunching", "andesite_cobblestone"));
+        }
+
+        static ItemLike andesiteLooseRock() {
+            return ForgeRegistries.ITEMS.getValue(new ResourceLocation("notreepunching", "andesite_loose_rock"));
+        }
+        
+        static ItemLike diorite() {
+            return Items.DIORITE;
+        }
+
+        static ItemLike dioriteCobblestone() {
+            return ForgeRegistries.ITEMS.getValue(new ResourceLocation("notreepunching", "diorite_cobblestone"));
+        }
+
+        static ItemLike dioriteLooseRock() {
+            return ForgeRegistries.ITEMS.getValue(new ResourceLocation("notreepunching", "diorite_loose_rock"));
+        }
+        
+        static ItemLike granite() {
+            return Items.GRANITE;
+        }
+
+        static ItemLike graniteCobblestone() {
+            return ForgeRegistries.ITEMS.getValue(new ResourceLocation("notreepunching", "granite_cobblestone"));
+        }
+
+        static ItemLike graniteLooseRock() {
+            return ForgeRegistries.ITEMS.getValue(new ResourceLocation("notreepunching", "granite_loose_rock"));
         }
 
         static ItemLike ice() {
