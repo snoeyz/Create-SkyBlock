@@ -2,10 +2,13 @@
     "processor": "com.snoeyz.skycreate.compat.patchouli.processors.PulverizingRecipeProcessor",
     "components": [
         {
-            "type": "patchouli:header", "text": "#input->iname#", "x": -1, "y": -1
+            "type": "patchouli:header", "text": "#pageTitle->fcapital", "x": -1, "y": -1
         },
         {
-            "type": "patchouli:item", "item": "#input", "framed": true, "x": 50, "y": 15
+            "type": "patchouli:custom", "class": "com.snoeyz.skycreate.compat.patchouli.components.ComponentIngredient", "input": "#input", "x": 50, "y": 15
+        },
+        {
+            "type": "patchouli:separator", "x": -1, "y": 35
         },
         
         {

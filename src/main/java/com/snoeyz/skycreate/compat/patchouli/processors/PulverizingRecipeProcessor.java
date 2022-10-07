@@ -32,7 +32,13 @@ public class PulverizingRecipeProcessor implements IComponentProcessor {
                 return IVariable.from(recipe.getOutputItems().get(ndx));
             }
         } else if (key.equals("input")) {
-            return IVariable.from(recipe.getIngredient().getItems()[0]);
+            return IVariable.from(recipe.getIngredient());
+        } else if (key.equals("pageTitle")) {
+            String recipeName = recipe.getId().getPath();
+            if (recipeName.indexOf("/") != -1) {
+                recipeName = recipeName.substring(recipeName.lastIndexOf("/") + 1);
+            }
+            return IVariable.wrap(recipeName.replaceAll("_", " "));
         }
 
         return null;

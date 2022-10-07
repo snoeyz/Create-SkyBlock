@@ -6,7 +6,7 @@
         {
             "type": "patchouli:spotlight",
             "item": "skycreate:pulverizer",
-            "text": "This pulverizer is a custom contraption that can be used on the following blocks:$(br)$(li)$(l:pulverizer#ice)Ice$()$(li)$(l:pulverizer#andesite)Andesite$()$(li)$(l:pulverizer#stone)Stone$()$(li)$(l:pulverizer#diorite)Diorite$()$(li)$(l:pulverizer#granite)Granite$()$(li)$(l:pulverizer#gravel)Gravel$()"
+            "text": "$(li)$(l:pulverizer#ice)Ice$()$(li)$(l:pulverizer#andesite)Andesite$()$(li)$(l:pulverizer#stone)Stone$()$(li)$(l:pulverizer#diorite)Diorite$()$(li)$(l:pulverizer#granite)Granite$()$(li)$(l:pulverizer#gravel)Gravel$()$(li)$(l:pulverizer#logs)Logs$()"
         },
         {
             "type": "skycreate:pulverizing_recipe",
@@ -57,6 +57,11 @@
             "type": "skycreate:pulverizing_recipe",
             "recipe": "skycreate:pulverizing/gravel",
             "anchor": "gravel"
+        },
+        {
+            "type": "skycreate:pulverizing_recipe",
+            "recipe": "skycreate:pulverizing/logs",
+            "anchor": "logs"
         }
     ]
 }
