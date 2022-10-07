@@ -1,8 +1,5 @@
 package com.snoeyz.skycreate.events;
 
-import com.simibubi.create.AllBlockPartials;
-import com.simibubi.create.AllTags.AllBlockTags;
-import com.simibubi.create.content.palettes.AllPaletteBlocks;
 import com.simibubi.create.content.palettes.AllPaletteStoneTypes;
 import com.snoeyz.skycreate.advancement.SCAdvancements;
 import com.snoeyz.skycreate.util.WorldUtil;

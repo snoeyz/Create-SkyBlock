@@ -45,6 +45,7 @@ public abstract class TemplateComponentBase implements ICustomComponent {
         return false;
     }
 
+    @SuppressWarnings("resource")
     protected void drawItem(PoseStack poseStack, @Nullable ItemStack ingredient) {
         if (ingredient != null) {
             PoseStack modelViewStack = RenderSystem.getModelViewStack();
@@ -67,6 +68,7 @@ public abstract class TemplateComponentBase implements ICustomComponent {
         }
     }
 
+    @SuppressWarnings("resource")
     protected void setTooltip(IComponentRenderContext context, @Nullable ItemStack stack, Component...tooltips) {
         if (stack != null) {
             List<Component> tooltip = stack.getTooltipLines(Minecraft.getInstance().player, Minecraft.getInstance().options.advancedItemTooltips ? TooltipFlag.Default.ADVANCED : TooltipFlag.Default.NORMAL);
