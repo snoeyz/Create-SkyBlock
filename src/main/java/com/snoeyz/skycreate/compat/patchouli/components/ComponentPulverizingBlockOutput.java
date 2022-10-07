@@ -20,7 +20,10 @@ public class ComponentPulverizingBlockOutput extends TemplateComponentBase {
     public IVariable output;
 
     private transient PulverizingBlockOutput blockOutput;
-    // TODO: Try using code from JEI's RecipeSlot to render things like animated water and block tag ingredients (i.e. Logs)
+    /**
+     * TODO: Try using code from JEI's RecipeSlot to render things like animated water and block tag ingredients (i.e. Logs)
+     * {@link mezz.jei.gui.ingredients.RecipeSlot}
+     */
 
     @Override
     public void onVariablesAvailable(UnaryOperator<IVariable> lookup) {
