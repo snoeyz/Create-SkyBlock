@@ -1,6 +1,6 @@
 package com.snoeyz.skycreate.datagen.recipe;
 
-import com.simibubi.create.AllItems;
+// import com.simibubi.create.AllItems;
 import com.simibubi.create.foundation.utility.RegisteredObjects;
 import com.snoeyz.skycreate.SkyCreateMod;
 import com.snoeyz.skycreate.registry.SCRecipeTypes;
@@ -78,14 +78,14 @@ public class PulverizingRecipeGen extends SkyCreateRecipeProvider {
     LOGS = pulverize("logs", b -> b.duration(200)
         .require(I.logs())
         .output(Items.STICK, 2)
-        .output(.3f, Items.STICK,2)),
+        .output(.3f, Items.STICK,2));
 
-    TUFF = pulverize(I::tuff, b -> b.duration(200)
-        .output(.25f, Items.FLINT)
-        .output(.3f, AllItems.ZINC_INGOT.get())
-        .output(.3f, AllItems.COPPER_NUGGET.get())
-        .output(.3f, Items.IRON_NUGGET)
-        .output(.1f, Items.GOLD_NUGGET));
+    // TUFF = pulverize(I::tuff, b -> b.duration(200)
+    //     .output(.25f, Items.FLINT)
+    //     .output(.3f, AllItems.ZINC_INGOT.get())
+    //     .output(.3f, AllItems.COPPER_NUGGET.get())
+    //     .output(.3f, Items.IRON_NUGGET)
+    //     .output(.1f, Items.GOLD_NUGGET));
 
     public PulverizingRecipeGen(DataGenerator gen) {
         super(gen);
@@ -194,9 +194,9 @@ public class PulverizingRecipeGen extends SkyCreateRecipeProvider {
             return Items.ICE;
         }
 
-        static ItemLike tuff() {
-            return Items.TUFF;
-        }
+        // static ItemLike tuff() {
+        //     return Items.TUFF;
+        // }
 
         static ItemLike gravel() {
             return Items.GRAVEL;
